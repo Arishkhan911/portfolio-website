@@ -1,5 +1,5 @@
 import type { Project } from '@/lib/types';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github, Star, FolderGit2 } from 'lucide-react';
 
 interface Props {
   projects: Project[];
@@ -38,7 +38,7 @@ export default function Projects({ projects, loading }: Props) {
                 key={project.id}
                 className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10"
               >
-                {project.image_url && (
+                {project.image_url ? (
                   <div className="relative h-52 overflow-hidden bg-white/5">
                     <img
                       src={project.image_url}
@@ -47,18 +47,18 @@ export default function Projects({ projects, loading }: Props) {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/20 to-transparent" />
-                    {project.featured && (
-                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-cyan-500/90 text-white text-xs px-2.5 py-1 font-medium">
-                        <Star className="w-3 h-3" /> Featured
-                      </span>
-                    )}
+                  </div>
+                ) : (
+                  <div className="relative h-32 overflow-hidden bg-gradient-to-br from-cyan-500/15 via-[#101722] to-violet-500/15 p-6">
+                    <FolderGit2 className="h-9 w-9 text-cyan-300" />
                   </div>
                 )}
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+                    {project.featured && <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-cyan-500/15 text-cyan-200 text-xs px-2.5 py-1 font-medium"><Star className="w-3 h-3" /> Featured</span>}
+                  </div>
                   <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     {project.description}
                   </p>
