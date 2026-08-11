@@ -1,6 +1,7 @@
 import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 
-const profileImageUrl = import.meta.env.VITE_PROFILE_IMAGE_URL?.trim();
+// A local portrait is bundled with the site; an environment URL can override it when needed.
+const profileImageUrl = import.meta.env.VITE_PROFILE_IMAGE_URL?.trim() || '/profile.jpg';
 
 export default function Hero() {
   return (
