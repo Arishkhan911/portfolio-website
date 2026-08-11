@@ -2,6 +2,10 @@
 
 A responsive personal portfolio built with React, TypeScript, Tailwind CSS, and Supabase. It includes an admin area for portfolio content and a Supabase-backed contact inbox.
 
+## Live site
+
+[portfolio-website-xbdg.vercel.app](https://portfolio-website-xbdg.vercel.app/)
+
 ## Tech stack
 
 - React and TypeScript
