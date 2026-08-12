@@ -14,7 +14,7 @@
 - Responsive single-page portfolio with dedicated About, Skills, Projects, and Contact sections
 - Project and skill data served from Supabase, with useful fallback content while data loads
 - Contact form that stores messages securely in a Supabase inbox
-- Authenticated admin dashboard for managing portfolio projects and reviewing messages
+- Authenticated admin dashboard for reviewing project content and contact messages
 - Row Level Security (RLS) policies for public portfolio data and protected admin actions
 
 ## Built with
@@ -92,7 +92,7 @@
 
 After creating a Supabase Auth user, sign in at `/login` to access the admin area:
 
-- `/admin` — review and manage project content
+- `/admin` — review project content
 - `/admin/messages` — read, update, and remove contact messages
 
 The database migrations enable RLS. Visitors can read projects and skills and submit contact messages; authenticated users can manage portfolio content and the inbox.
@@ -105,7 +105,7 @@ The database migrations enable RLS. Visitors can read projects and skills and su
   VITE_PROFILE_IMAGE_URL=https://example.com/profile.jpg
   ```
 
-- **Portfolio content:** manage projects and skills in Supabase after signing in, or add records directly through the Supabase dashboard.
+- **Portfolio content:** add and update projects or skills directly through the Supabase dashboard.
 
 ## Deployment
 
